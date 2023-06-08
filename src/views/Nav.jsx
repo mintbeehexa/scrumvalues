@@ -5,7 +5,7 @@ import { faHome } from "@fortawesome/free-solid-svg-icons";
 
 export default function Nav() {
     return (
-        <div className="topnav">
+        <div className="topnav responsive">
             <div className="nav-links">
                 <Link to="/summary" className="nav-link active">
                     <FontAwesomeIcon icon={faHome} />
@@ -15,7 +15,7 @@ export default function Nav() {
                         Case Studies <i className="fa fa-caret-down"></i>
                     </button>
                     <div className="dropdown-content">
-                        <Link to="/scrumvaluesquiz" className="nav-link">
+                        <Link to="/scrum-values-quiz" className="nav-link">
                             Scrum Values Quiz
                         </Link>
                     </div>
