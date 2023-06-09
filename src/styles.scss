@@ -1,3 +1,5 @@
+/* Tag */
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -5,6 +7,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  line-height: 1.6;
 }
 
 code {
@@ -19,11 +22,81 @@ code {
   box-sizing: border-box;
 }
 
+// Responsiveness columns definitions
+
+[class*="col-"] {
+  width: 100%;
+}
+
+@media only screen and (min-width: 900px) {
+
+  /* For desktop: */
+  .col-1 {
+    width: 8.33%;
+  }
+
+  .col-2 {
+    width: 16.66%;
+  }
+
+  .col-3 {
+    width: 25%;
+  }
+
+  .col-4 {
+    width: 33.33%;
+  }
+
+  .col-5 {
+    width: 41.66%;
+  }
+
+  .col-6 {
+    width: 50%;
+  }
+
+  .col-7 {
+    width: 58.33%;
+  }
+
+  .col-8 {
+    width: 66.66%;
+  }
+
+  .col-9 {
+    width: 75%;
+  }
+
+  .col-10 {
+    width: 83.33%;
+  }
+
+  .col-11 {
+    width: 91.66%;
+  }
+
+  .col-12 {
+    width: 100%;
+  }
+}
+
+
+// Multicolumn
+.row {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+// Components
+
 .App {
   font-family: sans-serif;
   width: 100%;
   min-height: 100vh;
 }
+
+// classes
 
 .topnav {
   background-color: #333;
@@ -74,21 +147,32 @@ code {
   }
 }
 
-/* Dropdown container - needed to position the dropdown content */
+.container {
+  text-align: justify;
+  margin: 0.5rem 2rem;
+}
 
+.intro-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  font-family: "Georgia", serif;
 
-/* Style the dropdown content (hidden by default) */
+  .intro-title {
+    padding-top: 2rem;
+    text-align: center;
+  }
 
+  .intro-img {
+    padding: 2rem;
+  }
 
-// /* Style the links inside the dropdown */
-// .dropdown-content a {
-//   float: none;
-//   color: black;
-//   padding: 12px 16px;
-//   text-decoration: none;
-//   display: block;
-//   text-align: left;
-// }
+  .intro-text {
+    padding: 2rem;
+    line-height: 1.6;
+  }
+
+}
 
 /* Add a dark background on topnav links and the dropdown button on hover */
 .topnav .nav-link:hover,
@@ -114,51 +198,91 @@ code {
 
 /* When the screen is less than 600 pixels wide, hide all links, except for Home. 
 Show the link that contains should open and close the topnav (.icon) */
-@media screen and (max-width: 600px) {
+// @media screen and (max-width: 600px) {
 
-  .topnav .nav-link:not(:first-child),
-  .dropdown .dropbtn {
-    display: none;
-  }
+//   .topnav .nav-link:not(:first-child),
+//   .dropdown .dropbtn {
+//     display: none;
+//   }
 
-  .topnav .nav-link.icon {
-    float: right;
-    display: block;
-  }
+//   .topnav .nav-link.icon {
+//     float: right;
+//     display: block;
+//   }
 
-  .topnav.responsive {
-    position: relative;
+//   .topnav.responsive {
+//     position: relative;
 
-    .nav-link.icon {
-      position: absolute;
-      right: 0;
-      top: 0;
+//     .nav-link.icon {
+//       position: absolute;
+//       right: 0;
+//       top: 0;
+//     }
+
+//     .nav-link {
+//       float: none;
+//       display: block;
+//       text-align: left;
+//     }
+
+//     .dropdown {
+//       float: none;
+//     }
+//   }
+
+//   /* The "responsive" class is added to the topnav with JavaScript when the user clicks on the icon. 
+// This class makes the topnav look good on small screens (display the links vertically instead of horizontally) */
+//   @media screen and (max-width: 600px) {
+
+
+//     .topnav.responsive .dropdown-content {
+//       position: relative;
+//     }
+
+//     .topnav.responsive .dropdown .dropbtn {
+//       display: block;
+//       width: 100%;
+//       text-align: left;
+//     }
+//   }
+// }
+
+.button-container {
+  display: flex;
+  align-items: center;
+  margin: 2rem;
+
+  .btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 20px;
+    background-color: #2ea44f;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: bold;
+
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+
+    &.--left {
+      margin-right: auto;
     }
 
-    .nav-link {
-      float: none;
-      display: block;
-      text-align: left;
+    &.--right {
+      margin-left: auto;
     }
 
-    .dropdown {
-      float: none;
-    }
-  }
 
-  /* The "responsive" class is added to the topnav with JavaScript when the user clicks on the icon. 
-This class makes the topnav look good on small screens (display the links vertically instead of horizontally) */
-  @media screen and (max-width: 600px) {
-
-
-    .topnav.responsive .dropdown-content {
-      position: relative;
+    :hover {
+      background-color: #1f8f3f;
     }
 
-    .topnav.responsive .dropdown .dropbtn {
-      display: block;
-      width: 100%;
-      text-align: left;
+    :focus {
+      outline: none;
+      box-shadow: 0 0 0 3px rgba(46, 164, 79, 0.4);
     }
   }
 }

@@ -1,7 +1,7 @@
 import { useEffect } from "react"
-import Button from "../components/Button"
+import Button from "../components/general/Button"
 
-export default function ScrumValuesQuiz() {
+export default function ScrumValuesIntro({ number }) {
     useEffect(() => {
         // const favicon = document.querySelector('link[rel="icon"]');
         // favicon.href = "../../public/scrum.png";
@@ -17,7 +17,8 @@ export default function ScrumValuesQuiz() {
                         key={number}
                         type="page-change"
                         content={number}
-                        to={`/scrumvalues-${number}`}
+                        to={`/scrum-values-${number}`
+                        }
                     />
                 ))}
             </div>
