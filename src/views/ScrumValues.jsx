@@ -1,7 +1,7 @@
 import { useEffect } from "react"
 import Button from "../components/general/Button"
 
-export default function ScrumValuesIntro({ number }) {
+export default function ScrumValues({ number }) {
     useEffect(() => {
         // const favicon = document.querySelector('link[rel="icon"]');
         // favicon.href = "../../public/scrum.png";

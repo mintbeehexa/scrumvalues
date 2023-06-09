@@ -11,7 +11,7 @@ import scrumpillars from "../assets/scrumpillars.png";
 import Question from "../components/scrumvalues/question"
 import Graph from "../components/scrumvalues/graph"
 
-export default function ScrumValuesQuizFacade(number) {
+export default function ScrumValuesQuizFacade({ number }) {
 
     const maxArea = 59.44103
 
@@ -52,7 +52,7 @@ export default function ScrumValuesQuizFacade(number) {
 
     return (
         <div>
-            <div className='container intro-container'>
+            {number === 1 && <div className='container intro-container'>
                 {!showValues &&
                     <div className='scrum-intro-container'>
                         <h1 className='intro-title'> Scrum </h1>
@@ -114,7 +114,7 @@ export default function ScrumValuesQuizFacade(number) {
                         </div>
                     </div>
                 }
-            </div>
+            </div>}
         </div>
     )
 

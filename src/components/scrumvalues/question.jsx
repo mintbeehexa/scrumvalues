@@ -48,7 +48,9 @@ const Question = ({ number, selections, onNext, onBack, onFinish, onChange }) =>
             checked={selected[index]}
             onChange={() => handleChange(index)}
           />
-          <label> {answer} </label>
+          <label>  <span onClick={() => handleChange(index)}>
+            {answer}
+          </span> </label>
         </div>
 
       ))}
